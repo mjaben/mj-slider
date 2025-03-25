@@ -1,0 +1,6 @@
+*.log
+*.sql
+wp-config.php
+node_modules/
+vendor/
+.DS_Store
