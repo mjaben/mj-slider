@@ -28,18 +28,26 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with MJ Slider. If not, see http://www.gnu.org/licenses/gpl-2.0.html.
 */
- if(! defined('ABSPATH')){
-    exit;
- }
 
- if (! class ('MJ_Slider')){
-   class MJ_SLIDER {
+if (! defined ('ABSPATH')){
+   exit;
+}
+
+if(! class_exist('MJ_Slider')){
+   class MJ_Slider{
       function __construct(){
+         $this->define_constants();
+      }
 
+      public function define_constants(){
+         define('MJ_SLIDER_PATH', plugin_dir_path(__FILE__));
+         define('MJ_SLIDER_URL', plugin_dir_url( __FILE__));
+         define('MJ_SLIDER_VERSION', '1.0.0');
       }
    }
- }
+}
 
-if (class_exist ('MJ_Slider')){
+if(class_exist('MJ_Slider')){
    $mj_slider = new MJ_Slider();
 }
+
